@@ -1,0 +1,32 @@
+#define sample 300
+
+int led = 0;
+int inPin = 3;
+float val;
+
+int array1[sample];
+
+unsigned long averaging:
+
+
+void setup () {
+}
+
+void loop() {
+
+	for(int i = 0; i < sample; i++){
+		array1[i] = analogRead(inPin);
+		averaging += array1[i]
+	}
+	
+	val = averaging/sample;
+	
+	val = constrain(val, 0 , 100);
+		val = map(val, 0, 100, 0, 255);
+		analogWrite(led, val);
+		
+		averaging = 0;
+		 
+}
+
+
